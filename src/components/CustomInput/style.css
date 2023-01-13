@@ -1,0 +1,35 @@
+.custom-input {
+  width: 394px;
+}
+
+input {
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(76, 78, 100, 0.22);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(76, 78, 100, 0.22);
+}
+
+.icon {
+  position: absolute;
+  /* left: 4.17%;
+  right: 4.17%;
+  top: 16.67%;
+  bottom: 20.83%; */
+  transform: translateY(-50%);
+  right: 14%;
+  top: 42%;
+  color: rgba(76, 78, 100, 0.249);
+}
