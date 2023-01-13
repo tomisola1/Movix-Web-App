@@ -1,0 +1,74 @@
+.header {
+  width: 100%;
+  height: 76vh;
+  background: url(../../assets/images/Poster.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.description-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  position: absolute;
+  width: 404px;
+  height: 285px;
+  left: 98px;
+  top: 158px;
+  color: #fff;
+}
+
+.description-text p {
+  width: 302px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.rating {
+  width: 184px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating span {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.imdb-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rotten-tomatoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.description-text button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 16px;
+  gap: 8px;
+  width: 169px;
+  height: 36px;
+  background: #be123c;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}

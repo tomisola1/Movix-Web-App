@@ -1,7 +1,7 @@
 import "./style.css";
 import { FaEye } from "react-icons/fa";
 
-function CustomInput({ placeholder, text, type, inputClass }) {
+function CustomInput({ placeholder, text, type = "text", inputClass }) {
   return (
     <div className="custom-input">
       <input

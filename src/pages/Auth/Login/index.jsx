@@ -7,19 +7,23 @@ import "./style.css";
 function Login() {
   return (
     <CustomAuthCard>
-      <div className="input-container">
+      <form className="input-container">
         <div className="authcard-text">
           <h3>Hi, Welcome</h3>
           <p>Please sign-up to start your experience</p>
         </div>
-        <CustomInput placeholder="Email" />
-        <CustomInput className="password-input" placeholder="Password" />
+        <CustomInput type="email" placeholder="Email" />
+        <CustomInput
+          className="password-input"
+          type="password"
+          placeholder="Password"
+        />
         <CustomButton btnText="login" />
         <div className="authcard-bottomtext">
           <p>Don't have an account?</p>
           <Link to="/register">Register</Link>
         </div>
-      </div>
+      </form>
     </CustomAuthCard>
   );
 }
