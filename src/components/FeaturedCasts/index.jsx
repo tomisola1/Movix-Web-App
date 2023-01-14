@@ -1,12 +1,11 @@
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-import MovieCard from "../MovieCard";
 import "./style.css";
 
-function FeaturedMovies() {
+function FeaturedCasts() {
   return (
     <div className="container">
       <div className="heading">
-        <h2>Featured Movie</h2>
+        <h2>Exclusive Videos</h2>
         <div className="see-more">
           <span>See more</span>
           <FaAngleRight className="angle-right-icon" />
@@ -14,14 +13,11 @@ function FeaturedMovies() {
       </div>
       <div className="movie-list">
         <FaAngleLeft className="angle-left" />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
+
         <FaAngleRight className="angle-right" />
       </div>
     </div>
   );
 }
 
-export default FeaturedMovies;
+export default FeaturedCasts;

@@ -1,0 +1,69 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  width: 250px;
+  height: 490px;
+  margin-left: 34px;
+  margin-top: 44px;
+  margin-right: 34px;
+  position: relative;
+}
+
+.like-and-tag {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 218px;
+  height: 29.21px;
+  left: 16px;
+  top: 15.58px;
+  color: aliceblue;
+}
+
+.tag {
+  padding: 7px 8px 0;
+  background-color: rgba(243, 244, 246, 0.5);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.like {
+  padding: 7px 8px 0;
+  background-color: rgba(243, 244, 246, 0.5);
+  border-radius: 50%;
+  color: #d1d5db;
+}
+
+.release-date {
+  font-weight: 700;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.movie-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: #111827;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+  width: 250px;
+}
+
+.movie-genre {
+  font-weight: 700;
+  font-size: 12px;
+  color: #9ca3af;
+}
