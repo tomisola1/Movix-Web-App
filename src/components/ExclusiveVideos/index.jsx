@@ -1,5 +1,5 @@
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-
+import VideoCard from "../VideoCard";
 import "./style.css";
 
 function ExclusiveVideos() {
@@ -14,7 +14,9 @@ function ExclusiveVideos() {
       </div>
       <div className="movie-list">
         <FaAngleLeft className="angle-left" />
-
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
         <FaAngleRight className="angle-right" />
       </div>
     </div>

@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className="header">
       <div className="description-text">
-        <h1 className="title">John Wick 3 : Parabellum</h1>
+        <h1 className="movie-title">John Wick 3 : Parabellum</h1>
         <div className="rating">
           <div className="imdb-rating">
             <img src={imdb} alt="imdb-logo" />

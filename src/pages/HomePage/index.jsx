@@ -5,6 +5,7 @@ import FeaturedMovies from "../../components/FeaturedMovies";
 import NewArrivals from "../../components/NewArrivals";
 import ExclusiveVideos from "../../components/ExclusiveVideos";
 import FeaturedCasts from "../../components/FeaturedCasts";
+import Footer from "../../components/Footer";
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
       <NewArrivals />
       <ExclusiveVideos />
       <FeaturedCasts />
+      <Footer />
     </>
   );
 }
