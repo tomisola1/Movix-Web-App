@@ -4,7 +4,7 @@ import "./style.css";
 
 function ExclusiveVideos() {
   return (
-    <div className="container">
+    <div className="exclusive-container">
       <div className="heading">
         <h2>Exclusive Videos</h2>
         <div className="see-more">

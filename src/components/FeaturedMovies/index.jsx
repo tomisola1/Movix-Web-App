@@ -4,7 +4,7 @@ import "./style.css";
 
 function FeaturedMovies() {
   return (
-    <div className="container">
+    <div className="featured-container">
       <div className="heading">
         <h2>Featured Movie</h2>
         <div className="see-more">
@@ -18,6 +18,8 @@ function FeaturedMovies() {
         <MovieCard />
         <MovieCard />
         <MovieCard />
+        {/* <MovieCard />
+        <MovieCard /> */}
         <FaAngleRight className="angle-right" />
       </div>
     </div>

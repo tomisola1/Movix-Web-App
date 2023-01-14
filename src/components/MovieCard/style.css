@@ -50,7 +50,7 @@
   color: #111827;
 }
 
-.rating {
+.movie-rating {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,10 +58,32 @@
   padding: 0px;
   gap: 32px;
   width: 250px;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .movie-genre {
   font-weight: 700;
   font-size: 12px;
   color: #9ca3af;
+}
+
+@media (max-width: 500px) {
+  .img-container img {
+    width: 210px;
+    height: 340px;
+  }
+
+  .like-and-tag {
+    width: 180px;
+    left: 14px;
+  }
+
+  .tag {
+    font-size: 10px;
+  }
+
+  .movie-rating {
+    width: 200px;
+  }
 }

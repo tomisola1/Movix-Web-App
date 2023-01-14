@@ -5,7 +5,7 @@ import "./style.css";
 
 function FeaturedCasts() {
   return (
-    <div className="container">
+    <div className="cast-container">
       <div className="heading">
         <h2>Featured Casts</h2>
         <div className="see-more">

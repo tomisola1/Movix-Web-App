@@ -14,7 +14,7 @@ function CustomNavbar({ user }) {
         <FaSearch className="search-icon" />
       </div>
       <div className="right-nav">
-        <span>Hi, {user}</span>
+        <span className="user">Hi, {user}</span>
         <span className="menu">
           <FaBars className="menu-icon" />
         </span>

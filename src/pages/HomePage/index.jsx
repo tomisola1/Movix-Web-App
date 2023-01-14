@@ -10,7 +10,7 @@ import Footer from "../../components/Footer";
 function HomePage() {
   return (
     <>
-      <CustomNavbar user="tomi" />
+      <CustomNavbar user="tomisola solomon" />
       <Header />
       <FeaturedMovies />
       <NewArrivals />

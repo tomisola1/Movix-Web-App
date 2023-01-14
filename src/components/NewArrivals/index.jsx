@@ -4,7 +4,7 @@ import "./style.css";
 
 function NewArrivals() {
   return (
-    <div className="container">
+    <div className="arrivals-container">
       <div className="heading">
         <h2>New Arrival</h2>
         <div className="see-more">

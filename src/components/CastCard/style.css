@@ -15,3 +15,10 @@
   font-size: 18px;
   color: #111827;
 }
+
+@media (max-width: 500px) {
+  .cast-container img {
+    width: 200px;
+    height: 300px;
+  }
+}

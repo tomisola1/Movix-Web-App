@@ -18,7 +18,7 @@ function MovieCard() {
       </div>
       <span className="release-date">USA, 2016-Current</span>
       <h4 className="movie-name">Stranger Things</h4>
-      <div className="rating">
+      <div className="movie-rating">
         <div className="imdb-rating">
           <img src={imdb} alt="imdb-logo" />
           <span>86.0/100</span>

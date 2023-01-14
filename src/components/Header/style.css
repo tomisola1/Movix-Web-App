@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: 76vh;
-  background: url(../../assets/images/Poster.png) no-repeat;
+  background: url(../../assets/images/Poster.png) center center fixed no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -9,6 +9,7 @@
 .description-text {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
@@ -71,4 +72,65 @@
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .movie-title {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+
+@media (max-width: 750px) {
+  .description-text {
+    width: 350px;
+    height: 280px;
+    left: 50px;
+  }
+
+  .movie-title {
+    width: 220px;
+    font-size: 35px;
+    line-height: 34px;
+  }
+
+  .description-text p {
+    width: 280px;
+  }
+
+  .description-text button {
+    width: 160px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .description-text {
+    width: 250px;
+  }
+
+  .description-text p {
+    width: 250px;
+  }
+}
+
+@media (max-width: 430px) {
+  .description-text {
+    left: 20px;
+    width: 200px;
+    height: 350px;
+  }
+
+  .rating {
+    width: 154px;
+  }
+
+  .description-text p {
+    width: 200px;
+  }
+
+  .description-text button {
+    width: 140px;
+    font-size: 10px;
+  }
 }
