@@ -5,20 +5,6 @@
   width: 394px;
 }
 
-.input-container h3 {
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 23px;
-  text-align: center;
-}
-
-.input-container p {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: #747474;
-}
-
 .authcard-text {
   display: flex;
   flex-direction: column;
@@ -27,12 +13,33 @@
   padding: 0px 0px 24px;
 }
 
+.authcard-text p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #747474;
+}
+
+.authcard-text h3 {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  text-align: center;
+}
+
 .authcard-bottomtext {
   display: flex;
   align-items: flex-start;
   padding: 10px;
   margin-top: 30px;
   gap: 10px;
+}
+
+.authcard-bottomtext p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #747474;
 }
 
 .authcard-bottomtext a {

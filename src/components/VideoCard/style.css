@@ -10,6 +10,11 @@
   position: relative;
 }
 
+.card-wrapper img {
+  width: 450px;
+  height: 253.12px;
+}
+
 .play-circle-icon {
   position: absolute;
   width: 60px;

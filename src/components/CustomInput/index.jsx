@@ -1,14 +1,26 @@
 import "./style.css";
 import { FaEye } from "react-icons/fa";
 
-function CustomInput({ placeholder, text, type = "text", inputClass }) {
+function CustomInput({
+  placeholder,
+  value,
+  type = "text",
+  inputClass,
+  id,
+  onChange,
+  name,
+}) {
   return (
     <div className="custom-input">
       <input
         className={inputClass}
+        id={id}
         type={type}
-        value={text}
+        name={name}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
+        required
       />
       <span className="icon">
         <FaEye />

@@ -10,6 +10,11 @@
   position: relative;
 }
 
+.cast-wrapper img {
+  width: 250px;
+  height: 370px;
+}
+
 .name {
   font-weight: 700;
   font-size: 18px;
@@ -17,7 +22,7 @@
 }
 
 @media (max-width: 500px) {
-  .cast-container img {
+  .cast-wrapper img {
     width: 200px;
     height: 300px;
   }
