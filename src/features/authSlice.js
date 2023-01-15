@@ -5,16 +5,15 @@ const initialState = {
 };
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: "user",
   initialState,
   reducers: {
     saveUser: (state, action) => {
-      state.user = action.payload;
+      state.value = action.payload;
     },
   },
 });
 
 export const { saveUser } = authSlice.actions;
-export const selectUser = (state) => state.user.user;
 
 export default authSlice.reducer;

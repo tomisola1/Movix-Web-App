@@ -29,9 +29,14 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/homepage" element={<ProtectedRoute />}>
-          <Route exact path="/homepage" element={<HomePage />} />
-        </Route>
+        <Route
+          path="/homepage"
+          element={
+            <ProtectedRoute>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

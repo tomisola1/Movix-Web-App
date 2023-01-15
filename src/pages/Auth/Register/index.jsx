@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
+import { ToastContainer, toast } from "react-toastify";
 import CustomAuthCard from "../../../components/CustomAuthCard";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
+import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 function Register() {
@@ -12,8 +14,10 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
+    handleRegister();
   };
 
   const handleRegister = () => {
@@ -21,15 +25,26 @@ function Register() {
       .then((userCredential) => {
         // Register
         const user = userCredential.user;
-        alert(`${user} is registered successfully`);
+        toast.success("Registered successfully");
         setName("");
         setEmail("");
         setPassword("");
+        if (user) navigate("/login");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log("Error ocured: ", errorCode, errorMessage);
+        if (error.code === "auth/email-already-in-use") {
+          toast.error("The email address is already in use");
+        } else if (error.code === "auth/invalid-email") {
+          toast.error("The email address is not valid.");
+        } else if (error.code === "auth/operation-not-allowed") {
+          toast.error("Operation not allowed.");
+        } else if (error.code === "auth/weak-password") {
+          toast.error("The password is too weak.");
+        } else if (error.code === "auth/wrong-password") {
+          toast.error("You have entered a wrong password");
+        } else {
+          toast.error(error.message);
+        }
       });
   };
 
@@ -64,12 +79,13 @@ function Register() {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <CustomButton btnText="register" onClick={handleRegister} />
+        <CustomButton btnText="register" onClick={handleSubmit} />
       </form>
       <div className="authcard-bottomtext">
         <p>Already have an account?</p>
         <Link to="/login">Login</Link>
       </div>
+      <ToastContainer theme="colored" />
     </CustomAuthCard>
   );
 }
