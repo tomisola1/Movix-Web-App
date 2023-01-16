@@ -28,7 +28,7 @@ function MovieCard({ movie }) {
         />
       </div>
       <span className="release-date">USA,{movie?.release_date}</span>
-      <h4 className="movie-name">Stranger Things</h4>
+      <h4 className="movie-name">{movie?.title}</h4>
       <div className="movie-rating">
         <div className="imdb-rating">
           <img src={imdb} alt="imdb-logo" />
