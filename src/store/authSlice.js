@@ -5,7 +5,6 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth } from "../firebase";
 
@@ -20,14 +19,14 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     saveUser: (state, action) => {
-      state.value = action.payload;
+      state.user = action.payload;
     },
     loginLoading: (state) => {
       state.isLoading = true;
     },
     loginSuccess: (state, action) => {
       state.isLoading = false;
-      state.value = action.payload;
+      state.user = action.payload;
     },
     loginFail: (state, action) => {
       state.isLoading = false;
@@ -40,7 +39,6 @@ export const authSlice = createSlice({
 export const { saveUser, loginLoading, loginSuccess, loginFail } =
   authSlice.actions;
 
-const navigate = Navigate();
 export const login = (email, password) => async (dispatch) => {
   dispatch(loginLoading());
 
@@ -50,7 +48,6 @@ export const login = (email, password) => async (dispatch) => {
       console.log("other user", user);
       dispatch(loginSuccess(user));
       toast.success("Logged in successfully");
-      if (user) navigate("/homepage");
     })
     .catch((error) => {
       toast.error(error.message);
@@ -70,7 +67,6 @@ export const register = (email, password) => async (dispatch) => {
     const user = userCredential.user;
     dispatch(loginSuccess(user));
     toast.success("Registered successfully");
-    if (user) navigate("/login");
   } catch (error) {
     toast.error(error.message);
     dispatch(loginFail(error.message));

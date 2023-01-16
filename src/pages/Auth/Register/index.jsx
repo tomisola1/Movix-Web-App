@@ -7,7 +7,7 @@ import CustomAuthCard from "../../../components/CustomAuthCard";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../../features/authSlice";
+import { register } from "../../../store/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 

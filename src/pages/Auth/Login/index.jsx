@@ -1,14 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../firebase";
 import CustomAuthCard from "../../../components/CustomAuthCard";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../../features/authSlice";
+import { login } from "../../../store/authSlice";
 import "./style.css";
 
 function Login() {
@@ -25,34 +23,9 @@ function Login() {
 
   const navigate = useNavigate();
   console.log("my user", user);
-  const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        toast.success("Logged in successfully");
-        if (user) navigate("/homepage");
-      })
-      .catch((error) => {
-        if (error.code === "auth/email-already-in-use") {
-          toast.error("The email address is already in use");
-        } else if (error.code === "auth/invalid-email") {
-          toast.error("The email address is not valid.");
-        } else if (error.code === "auth/operation-not-allowed") {
-          toast.error("Operation not allowed.");
-        } else if (error.code === "auth/weak-password") {
-          toast.error("The password is too weak.");
-        } else if (error.code === "auth/wrong-password") {
-          toast.error("You have entered a wrong password");
-        } else if (error.code === "auth/user-not-found") {
-          toast.error(
-            "This user does not exist. Login with authenticated user"
-          );
-        } else {
-          toast.error(error.message);
-        }
-      });
-  };
+  if (user) {
+    navigate("/homepage");
+  }
 
   return (
     <CustomAuthCard>

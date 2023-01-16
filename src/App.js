@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { getUser } from "./features/authSlice";
+import { getUser } from "./store/authSlice";
 import { firebaseConfig } from "./firebase";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
