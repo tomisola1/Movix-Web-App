@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import CustomNavbar from "./CustomNavbar";
 import Footer from "./Footer";
 
-const PageLayout = ({ children }) => {
+const PageLayout = ({ children, noScroll }) => {
   const { user } = useSelector((state) => state.auth);
   const [navbar, setNavbar] = useState(false);
   const changeBackground = () => {
-    if (window.scrollY >= 66) {
+    if (window.scrollY >= 66 && !noScroll) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -15,9 +15,9 @@ const PageLayout = ({ children }) => {
   };
 
   useEffect(() => {
-    changeBackground();
-    // adding the event when scroll change background
-    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
   });
 
   const name = user.email.substring(0, user.email.indexOf("@"));
@@ -27,7 +27,7 @@ const PageLayout = ({ children }) => {
       <CustomNavbar
         user={name}
         className={navbar ? "navbar" : "nav-bar"}
-        onScroll={changeBackground}
+        noScroll={noScroll}
       />
       {children}
       <Footer />

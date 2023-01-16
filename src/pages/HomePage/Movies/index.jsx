@@ -13,8 +13,8 @@ const Movies = () => {
   }, [location.pathname]);
   const { movies } = useSelector((state) => state.movie);
   return (
-    <PageLayout>
-      <div className="">
+    <PageLayout noScroll={true}>
+      <div className="all-movies">
         <h2>Featured Movie</h2>
 
         <div className="movies">

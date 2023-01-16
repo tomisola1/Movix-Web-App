@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import CastCard from "../../../components/CastCard/CastCard";
 import PageLayout from "../../../components/PageLayout";
-import "./style.css";
+import "../Movies/style.css";
 
 const Casts = () => {
   const location = useLocation();
@@ -13,8 +13,8 @@ const Casts = () => {
   }, [location.pathname]);
   const { cast } = useSelector((state) => state.movie);
   return (
-    <PageLayout>
-      <div className="">
+    <PageLayout noScroll={true}>
+      <div className="all-cast">
         <h2>Featured Casts</h2>
 
         <div className="movies">

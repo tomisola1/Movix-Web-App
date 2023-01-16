@@ -5,11 +5,14 @@ import tvImg from "../../assets/images/tv.png";
 import { logout } from "../../store/authSlice";
 import "./style.css";
 
-function CustomNavbar({ user, className, onScroll }) {
+function CustomNavbar({ user, className, noScroll = false }) {
   const dispatch = useDispatch();
 
   return (
-    <nav className={`nav-bar ${className}`} onScroll={onScroll}>
+    <nav
+      className={`nav-bar ${className} ${noScroll ? "no-scroll" : ""}`}
+      onScroll={noScroll}
+    >
       <div className="left-nav">
         <img src={tvImg} alt="tv" />
         <span>Movix</span>
