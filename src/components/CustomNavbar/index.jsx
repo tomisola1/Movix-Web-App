@@ -1,27 +1,15 @@
-import { useEffect, useState } from "react";
 import { FaSearch, FaBars } from "react-icons/fa";
+import { MdLogout } from "react-icons/md";
+import { useDispatch } from "react-redux";
 import tvImg from "../../assets/images/tv.png";
+import { logout } from "../../store/authSlice";
 import "./style.css";
 
-function CustomNavbar({ user }) {
-  const [navbar, setNavbar] = useState(false);
-  const changeBackground = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 66) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
-
-  // useEffect(() => {
-  //   changeBackground()
-  //   // adding the event when scroll change background
-  //   window.addEventListener("scroll", changeBackground)
-  // })
+function CustomNavbar({ user, className, onScroll }) {
+  const dispatch = useDispatch();
 
   return (
-    <nav className={navbar ? "nav-bar" : "navbar"} onScroll={changeBackground}>
+    <nav className={`nav-bar ${className}`} onScroll={onScroll}>
       <div className="left-nav">
         <img src={tvImg} alt="tv" />
         <span>Movix</span>
@@ -35,6 +23,9 @@ function CustomNavbar({ user }) {
         <span className="menu">
           <FaBars className="menu-icon" />
         </span>
+        <div className="logout" onClick={() => dispatch(logout())}>
+          logout <MdLogout />
+        </div>
       </div>
     </nav>
   );

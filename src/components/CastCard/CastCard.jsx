@@ -1,11 +1,11 @@
-import cast from "../../assets/images/cast.png";
+import { IMAGE_BASE_URL } from "../../util/config";
 import "./style.css";
 
-function CastCard() {
+function CastCard({ cast }) {
   return (
     <div className="cast-wrapper">
-      <img src={cast} alt="" />
-      <span className="name">Timothee</span>
+      <img src={`${IMAGE_BASE_URL}/${cast?.profile_path}`} alt="" />
+      <span className="name">{cast?.name}</span>
     </div>
   );
 }

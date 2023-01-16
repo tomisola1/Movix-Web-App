@@ -8,14 +8,18 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import HomePage from "./pages/HomePage";
 import ProtectedRoute from "./ProtectedRoute/protectedRoute";
+import Movies from "./pages/HomePage/Movies";
+import Casts from "./pages/HomePage/Casts";
 
 function App() {
   initializeApp(firebaseConfig);
-  console.log("user from state");
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser());
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <Router>
       <Routes>
@@ -26,6 +30,22 @@ function App() {
           element={
             <ProtectedRoute>
               <HomePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movies"
+          element={
+            <ProtectedRoute>
+              <Movies />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/casts"
+          element={
+            <ProtectedRoute>
+              <Casts />
             </ProtectedRoute>
           }
         />

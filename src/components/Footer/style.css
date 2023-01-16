@@ -1,3 +1,7 @@
+.footer-container {
+  position: relative;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -8,7 +12,7 @@
   height: 210.43px;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
-  top: 3150px;
+  top: 100px;
 }
 
 .socials {
@@ -44,19 +48,11 @@
   .footer {
     width: 400px;
     height: 180.43px;
-    top: 3005px;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer {
-    top: 3100px;
   }
 }
 
 @media (max-width: 550px) {
   .footer {
-    top: 3120px;
     width: 100px;
   }
 
@@ -75,6 +71,9 @@
 }
 
 @media (max-width: 350px) {
+  .footer {
+    top: 30px;
+  }
   .socials {
     font-size: 16px;
   }

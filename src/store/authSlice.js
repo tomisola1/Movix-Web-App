@@ -45,7 +45,6 @@ export const login = (email, password) => async (dispatch) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log("other user", user);
       dispatch(loginSuccess(user));
       toast.success("Logged in successfully");
     })

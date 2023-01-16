@@ -1,4 +1,9 @@
-.featured-container {
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+.featured-container,
+.cast-container {
   display: flex;
   flex-direction: column;
   padding: 70px 38px 0 38px;
@@ -10,12 +15,14 @@
   justify-content: space-between;
   align-items: center;
   gap: 83px;
+  margin-bottom: 30px;
 }
 
 .heading h2 {
   font-weight: 700;
   font-size: 36px;
-  margin-left: 60px;
+  margin-left: 30px;
+  flex-grow: 1;
 }
 
 .see-more {
@@ -23,6 +30,9 @@
   align-items: center;
   gap: 8px;
   color: #be123c;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
 .see-more span {
@@ -30,22 +40,38 @@
   font-size: 18px;
 }
 
-.angle-right-icon {
-  margin-right: 66px;
+.movies-container {
+  display: flex;
+}
+
+.movies-container svg {
+  align-self: center;
+  display: flex;
+  margin-bottom: 100px;
 }
 
 .movie-list {
   display: flex;
   align-items: center;
+  overflow-y: hidden;
   overflow-x: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  gap: 20px;
+  height: 100%;
+}
+
+.movie-list::-webkit-scrollbar {
+  display: none;
 }
 
 .angle-right {
-  font-size: 35px;
+  font-size: 50px;
 }
 
 .angle-left {
-  font-size: 35px;
+  font-size: 50px;
 }
 
 @media (max-width: 750px) {

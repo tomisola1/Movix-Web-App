@@ -1,4 +1,3 @@
-import Spinner from "../Spinner/Spinner";
 import "./style.css";
 
 function CustomButton({ btnText, onClick, disabled, loading }) {
@@ -8,7 +7,7 @@ function CustomButton({ btnText, onClick, disabled, loading }) {
       onClick={onClick}
       disabled={disabled || loading}
     >
-      {loading ? <Spinner /> : btnText}
+      {loading ? <span class="loader"></span> : btnText}
     </button>
   );
 }

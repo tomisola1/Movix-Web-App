@@ -22,7 +22,7 @@ function Login() {
   };
 
   const navigate = useNavigate();
-  console.log("my user", user);
+
   if (user) {
     navigate("/homepage");
   }

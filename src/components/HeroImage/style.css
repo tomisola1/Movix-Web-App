@@ -1,7 +1,8 @@
 .header {
   width: 100%;
-  height: 76vh;
-  background: url(../../assets/images/Poster.png) center center fixed no-repeat;
+  height: 600px;
+  background-position: center, center;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -9,16 +10,11 @@
 .description-text {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  padding: 0px;
+  justify-content: center;
+  padding-left: 100px;
   gap: 16px;
-  position: absolute;
-  width: 404px;
-  height: 285px;
-  left: 98px;
-  top: 158px;
   color: #fff;
+  height: 100%;
 }
 
 .description-text p {
@@ -32,6 +28,7 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 56px;
+  width: 404px;
 }
 
 .rating {
@@ -75,6 +72,9 @@
 }
 
 @media (max-width: 900px) {
+  .description-text {
+    padding-left: 70px;
+  }
   .movie-title {
     font-size: 40px;
     line-height: 56px;
@@ -83,9 +83,7 @@
 
 @media (max-width: 750px) {
   .description-text {
-    width: 350px;
-    height: 280px;
-    left: 50px;
+    padding-left: 60px;
   }
 
   .movie-title {
@@ -106,7 +104,7 @@
 
 @media (max-width: 600px) {
   .description-text {
-    width: 250px;
+    padding-left: 50px;
   }
 
   .description-text p {
@@ -116,9 +114,7 @@
 
 @media (max-width: 430px) {
   .description-text {
-    left: 20px;
-    width: 200px;
-    height: 350px;
+    padding-left: 40px;
   }
 
   .rating {

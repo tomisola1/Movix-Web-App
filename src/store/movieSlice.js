@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_URL } from "../util/config";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const initialState = {
   loading: false,
+  loadingCast: false,
   movies: [],
+  cast: [],
 };
 
 const movieSlice = createSlice({
@@ -22,21 +25,49 @@ const movieSlice = createSlice({
     getMoviesFail: (state, action) => {
       state.loading = false;
     },
+    getCastLoading: (state) => {
+      state.loadingCast = true;
+    },
+    getCastSuccess: (state, action) => {
+      state.loadingCast = false;
+      state.cast = action.payload;
+    },
+    getCastFail: (state, action) => {
+      state.loading = false;
+    },
   },
 });
 
-export const { getMoviesLoading, getMoviesFail, getMoviesSuccess } =
-  movieSlice.actions;
+export const {
+  getMoviesLoading,
+  getMoviesFail,
+  getMoviesSuccess,
+  getCastLoading,
+  getCastSuccess,
+  getCastFail,
+} = movieSlice.actions;
 
 export const getAllMovies = () => async (dispatch, getState) => {
   dispatch(getMoviesLoading());
   try {
     const response = await axios.get(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s="Harry"&type=movie&page=10`
+      `${API_URL}/movie/popular?api_key=${API_KEY}`
     );
-    dispatch(getMoviesSuccess(response.data.Search));
+    dispatch(getMoviesSuccess(response.data.results));
   } catch (error) {
     dispatch(getMoviesFail(error));
+  }
+};
+
+export const getCast = () => async (dispatch, getState) => {
+  dispatch(getCastLoading());
+  try {
+    const response = await axios.get(
+      `${API_URL}/person/popular?api_key=${API_KEY}`
+    );
+    dispatch(getCastSuccess(response.data.results));
+  } catch (error) {
+    dispatch(getCastFail(error));
   }
 };
 
