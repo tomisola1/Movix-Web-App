@@ -107,6 +107,7 @@
   color: red;
   cursor: pointer;
   width: 100px;
+  gap: 10px;
 }
 
 @media (max-width: 1100px) {
@@ -152,7 +153,12 @@
 
 @media (max-width: 750px) {
   .navbar {
-    padding-left: 30px;
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+
+  .nav-bar {
+    padding-left: 20px;
     padding-right: 30px;
   }
 
@@ -190,11 +196,13 @@
 @media (max-width: 510px) {
   .nav-bar {
     padding-left: 5px;
+    padding-right: 5px;
   }
 
   .right-nav {
     width: 150px;
-    gap: 15px;
+    gap: 25px;
+    padding-right: 0px;
   }
 
   .user {
@@ -208,7 +216,7 @@
   }
 
   .right-nav {
-    padding-left: 50px;
+    padding-left: 10px;
   }
 }
 
