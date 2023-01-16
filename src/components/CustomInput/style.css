@@ -1,5 +1,6 @@
 .custom-input {
   width: 394px;
+  position: relative;
 }
 
 input {
@@ -24,12 +25,8 @@ input::placeholder {
 
 .icon {
   position: absolute;
-  /* left: 4.17%;
-  right: 4.17%;
-  top: 16.67%;
-  bottom: 20.83%; */
   transform: translateY(-50%);
-  right: 14%;
+  right: 5%;
   top: 42%;
   color: rgba(76, 78, 100, 0.249);
 }

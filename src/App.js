@@ -1,29 +1,21 @@
 import { initializeApp } from "firebase/app";
-import { onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { auth, firebaseConfig } from "./firebase";
+import { getUser } from "./features/authSlice";
+import { firebaseConfig } from "./firebase";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import HomePage from "./pages/HomePage";
-import { saveUser } from "./features/authSlice";
-import ProtectedRoute from "./utils/protectedRoute";
+import ProtectedRoute from "./ProtectedRoute/protectedRoute";
 
 function App() {
   initializeApp(firebaseConfig);
-  const user = useSelector((state) => state.auth.value);
-  console.log("user from state", user);
+  console.log("user from state");
   const dispatch = useDispatch();
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        dispatch(saveUser(user.refreshToken));
-      } else {
-        dispatch(saveUser(undefined));
-      }
-    });
-  }, [dispatch]);
+    dispatch(getUser());
+  }, []);
   return (
     <Router>
       <Routes>

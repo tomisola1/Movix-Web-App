@@ -6,10 +6,15 @@ import { ToastContainer, toast } from "react-toastify";
 import CustomAuthCard from "../../../components/CustomAuthCard";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../../../features/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 function Register() {
+  const { isLoading, user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +22,7 @@ function Register() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleRegister();
+    dispatch(register(email, password));
   };
 
   const handleRegister = () => {
@@ -47,9 +52,12 @@ function Register() {
         }
       });
   };
+  if (user) {
+    navigate("/login");
+  }
 
   return (
-    <CustomAuthCard>
+    <CustomAuthCard className="auth-cards">
       <div className="authcard-text">
         <h3>Hi, Welcome</h3>
         <p>Please sign-in to your account and start your experience</p>
@@ -58,6 +66,7 @@ function Register() {
         <CustomInput
           id="name"
           name="name"
+          type="text"
           value={name}
           placeholder="Full Name"
           onChange={(e) => setName(e.target.value)}
@@ -77,9 +86,14 @@ function Register() {
           value={password}
           type="password"
           placeholder="Password"
+          withIcon="true"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <CustomButton btnText="register" onClick={handleSubmit} />
+        <CustomButton
+          btnText="register"
+          onClick={handleSubmit}
+          loading={isLoading}
+        />
       </form>
       <div className="authcard-bottomtext">
         <p>Already have an account?</p>
