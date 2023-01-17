@@ -71,4 +71,16 @@ export const getCast = () => async (dispatch, getState) => {
   }
 };
 
+export const searchMovies = () => async (dispatch, getState) => {
+  dispatch(getMoviesLoading());
+  try {
+    const response = await axios.get(
+      `${API_URL}/search/movie?api_key=${API_KEY}`
+    );
+    dispatch(getMoviesSuccess(response.data.results));
+  } catch (error) {
+    dispatch(getMoviesFail(error));
+  }
+};
+
 export default movieSlice.reducer;
